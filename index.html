@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Guide</title>
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+  <div class="pesquisa">
+    <h1>
+      Search Guide
+    </h1>
+  </div>
+  <div class="primeira-escrita">
+    <p>
+      This guide explains how to write advanced search queries using easy to understand examples.
+    </p>
+  </div>
+  <h2>
+    Simple Search (one or multiple terms)
+  </h2>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=open%20science&l=list&p=1&s=10&sort=bestmatch" target="_blank">open science</a>
+    </div>
+  </div>
+  <div>
+    <p class="primeira-escrita12">
+      Results will match records with the terms <span class="span1"> open</span> or <span class="span1"> science</span> in any field. Note that stemming is applied so e.g. <span class="span1"> science</span> will also match <span class="span1"> sciences</span>. Search results are ranked according to an algorithm that takes your query terms into account.
+      <br>
+      <br>
+      You can require presence of both terms using either the <span class="span1">+</span> or <span class="span1">AND</span> operator:
+    </p>
+  </div>
+  <strong class="example">Examples: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=%2Bopen%20%2Bscience&l=list&p=1&s=10&sort=bestmatch" target="_blank">+open +science</a> or <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=open%20AND%20science&l=list&p=1&s=10&sort=bestmatch" target="_blank">open AND science</a>
+    </div>
+    <div class="primeira-escrita11">
+      <p class="primeira-escrita1">You can require absence of one or more terms using either the <span class="span1"> - </span> or <span class="span1"> NOT </span> operator:</p>
+    </div>
+  </div>
+  <strong class="example">Examples: </strong>
+
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?page=1&size=20&q=-open%20%2Bscience">-open +science</a> or <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=NOT%20open%20AND%20science&l=list&p=1&s=10&sort=bestmatch" target="_blank">NOT open AND science</a>
+    </div>
+  </div>
+
+  <h2>Phrase search</h2>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?page=1&size=20&q=%22open%20science%22" target="_blank">"open science"</a>
+    </div>
+    <p class="primeira-escrita1">Results will match records with the phrase <span class="span1"> open science </span>in any field.</p>
+  </div>
+  <h2>Field search</h2>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=metadata.title%3Aopen&l=list&p=1&s=10&sort=bestmatch" target="_blank">metadata.title:open</a>
+    </div>
+  </div>
+  <p class="primeira-escrita1">
+    Results will match records with the term <span class="span1"> open</span> in the field <span class="span1"> metadata.title </span>. If you want to search for multiple terms in the title you must <strong>group the terms </strong>using parenthesis: </p>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=metadata.title%3A%28open%20science%29&l=list&p=1&s=10&sort=bestmatch" target="_blank">metadata.title:(open science)</a>
+    </div>
+    <p class="primeira-escrita1">See the field reference below for the full list of fields you can search.</p>
+  </div>
+
+  <h2>Combined simple, phrase or field search </h2>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=%2Bmetadata.title%3A%22open%20science%22%20-metadata.title%3Apolicy&l=list&p=1&s=10&sort=bestmatch" target="_blank">+metadata.title:"open science" -metadata.title:policy</a> or e.g. <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=metadata.title%3A%28-open%20%2Bscience%29&l=list&p=1&s=10&sort=bestmatch">metadata.title:(-open +science)</a>
+    </div>
+  </div>
+  <p class="primeira-escrita1">
+    You can combine simple, phrase and field search to construct advanced search queries.
+  </p>
+  <h2>Range search</h2>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?page=1&size=20&q=metadata.publication_date:%5B2017%20TO%202018%5D">metadata.publication_date:[2017 TO 2018]</a> (note, you must capitalize <span class="escrita">TO</span> ).
+    </div>
+  </div>
+  <p class="primeira-escrita1">Results will match any record with a publication date between 2017-01-01 and 2018-01-01 (both dates inclusive).</p>
+  <div>
+    <p class="primeira-escrita1">Note that, partial dates are expanded to full dates, e.g.: </p>
+    <div class="li1">
+      <li>
+        2017 is expanded to 2017-01-01
+      </li>
+      <li>
+        2017-06 is expanded to 2017-06-01
+      </li>
+    </div>
+    <p class="primeira-escrita1">Use square brackets ( <span class="span1">[]</span> ) for inclusive ranges and use curly brackets (<span class="span1">{}</span>) for exclusive ranges, e.g.:</p>
+    <div class="li1">
+      <li>
+        <span class="span1">[2017 TO 2018} </span> is equivalent to <span class="span1"> [2017-01-01 TO 2017-12-31] </span> because of date expansion and exclusive upper bound.
+      </li>
+    </div>
+    <p class="primeira-escrita1">
+      Examples of other ranges:
+    </p>
+    <div class="li1">
+      <li>
+        <span class="span1">metadata.publication_date:{* TO 2017-01-01} </span>: All days until 2017.
+      </li>
+      <li>
+        <span class="span1">metadata.publication_date:[2017-01-01 TO *] </span>: All days from 2017.
+      </li>
+    </div>
+  </div>
+  <h2>Ranking/Sorting
+  </h2>
+  <div>
+    <p class="primeira-escrita1">
+      By default all searches are sorted according to an internal ranking algorithm that scores each match against your query. In both the user interface and REST API, it's possible to sort the results by:
+    </p>''
+    <div class="li1">
+      <li>
+        Most recent
+      </li>
+      <li>
+        Best match
+      </li>
+    </div>
+  </div>
+  <h2>
+    Regular expressions
+  </h2>
+  <div>
+    <p class="primeira-escrita1">Regular expressions are a powerful pattern matching language that allow to search for specific patterns in a field. For instance if we wanted to find all records with a DOI-prefix 10.5281 we could use a regular expression search:</p>
+  </div>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=metadata.subjects.identifier%3A%2F03yrm5c2%5B1%2C6%5D%2F&l=list&p=1&s=10&sort=bestmatch" target="_blank">metadata.subjects.identifier:/03yrm5c2[1,6]/</a>
+    </div>
+  </div>
+  <p class="primeira-escrita1">Careful, the regular expression must match the entire field value. See the <a class="escrita" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-regexp-query.html#regexp-syntax">regular expression syntax</a> for further details.
+  </p>
+  <h2>
+    Missing values
+  </h2>
+  <div>
+    <p class="primeira-escrita1">It is possible to search for records that either are missing a value or have a value in a specific field using the <span class="span1">_exists_</span> and <span class="span1">_missing_</span> field names.
+    </p>
+  </div>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=_missing_%3Ametadata.additional_titles&l=list&p=1&s=10&sort=bestmatch">_missing_:metadata.additional_titles </a>
+      <span class="primeira-escrita1">(all records without metadata.additional_titles)</span>
+    </div>
+  </div>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="/https://inveniordm.web.cern.ch/search?q=_exists_%3Ametadata.creators&l=list&p=1&s=10&sort=bestmatch">_exists_:metadata.creators</a><span class="primeira-escrita1"> (all records with metadata.creators)</span>
+    </div>
+  </div>
+  <h2>Advanced Concepts</h2>
+  <strong class="example">Boosting</strong>
+  <p class="primeira-escrita1">You can use the boost operator ^ when one term is more relevant than another. For instance, you can search for all records with the phrase open science in either title or description field, but rank records with the phrase in the title field higher:</p>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=metadata.title%3A%22open%20science%22%5E5%20metadata.description%3A%22open%20science%22&l=list&p=1&s=10&sort=bestmatch">metadata.title:"open science"^5 metadata.description:"open science"</a>
+    </div>
+  </div>
+  <strong class="example">Fuzziness</strong>
+  <p class="primeira-escrita1">You can search for terms similar to but not exactly like your search term using the fuzzy operator ~.
+  </p>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=oepn~&l=list&p=1&s=10&sort=bestmatch">oepn~</a>
+    </div>
+    <p class="primeira-escrita1">
+      Results will match records with terms similar to <span class="span1">oepn</span> which would e.g. also match <span class="span1">open.</span>
+    </p>
+  </div>
+  <strong class="example">Proximity searches</strong>
+  <p class="primeira-escrita1">A phrase search like <span class="span1"> "open science"</span> by default expect all terms in exactly the same order, and thus for instance would not match a record containing the phrase "open access and science". A proximity search allows that the terms are not in the exact order and may include other terms inbetween. The degree of flexiblity is specified by an integer afterwards:</p>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=%22open%20science%22~5&l=list&p=1&s=10&sort=bestmatch">"open science"~5</a>
+    </div>
+  </div>
+  <strong class="example">Wildcards</strong>
+  <p class="primeira-escrita1">You can use wildcards in search terms to replace a single character (using <span class="span1">? </span>operator) or zero or more characters (using <span class="span1"> * </span>operator).</p>
+  <strong class="example">Example: </strong>
+  <div class="caixa0">
+    <div class="caixa1">
+      <a class="escrita" href="https://inveniordm.web.cern.ch/search?q=ope%3F%20scien%2A&l=list&p=1&s=10&sort=bestmatch">ope? scien*</a>
+    </div>
+  </div>
+  <p class="primeira-escrita1">Wildcard searches can be slow and should normally be avoided if possible.
+
+  </p>
+</body>
+
+</html>

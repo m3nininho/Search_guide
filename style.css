@@ -1,0 +1,76 @@
+body {
+  margin: 60px 280px;
+  background: aliceblue;
+}
+a,
+span {
+  text-decoration: none;
+}
+h2 {
+  color: rgba(87, 23, 100, 0.74);
+  padding: 0.2px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.808),
+    rgb(153, 23, 218)
+  );
+}
+.escrita {
+  font-size: 20px;
+  color: rgb(187, 3, 132);
+  background: rgba(245, 222, 179, 0.096);
+}
+.example {
+  font-size: 19px;
+}
+.pesquisa {
+  color: #4f208b;
+  font-size: 20px;
+  text-align: center;
+  padding: 0.2px;
+  border-radius: 15px;
+  border: rgb(181, 103, 226) solid 2px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.808),
+    rgb(153, 23, 218)
+  );
+}
+.primeira-escrita {
+  text-align: center;
+  font-size: 19px;
+}
+.primeira-escrita1 {
+  text-align: center;
+  font-size: 19px;
+}
+.primeira-escrita11 {
+  text-align: center;
+  font-size: 19px;
+  height: 25px;
+}
+.primeira-escrita12 {
+  text-align: center;
+  font-size: 19px;
+}
+.caixa0 {
+  margin: 0.5rem 0.5rem;
+  padding: 1rem 0.9rem;
+  border-radius: 0.5rem 0.5rem;
+}
+.caixa1 {
+  /* margin: 1rem 0 -1.8rem; */
+  padding: 1rem 1.5rem;
+  background: rgba(155, 96, 182, 0.671);
+  border: 1px solid rgb(89, 45, 119);
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+.li1 {
+  font-size: 19px;
+}
+.span1 {
+  color: rgb(187, 3, 132);
+  background: rgba(245, 222, 179, 0.315);
+}
